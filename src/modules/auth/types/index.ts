@@ -5,7 +5,10 @@ export interface SignIn {
 }
 
 export interface SignUp extends SignIn{
-    first_name: string;
-    last_name: string;
+    full_name: string;
+    username: string;
     email: string;
+    address: string;
+    phone_number: string;
+    password: string
 }
