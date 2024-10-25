@@ -17,8 +17,7 @@ const SignIn = () => {
   function handleSubmit(values: SignInType): void {
     mutate(values, {
       onSuccess: (res) => {
-       console.log(res);
-       
+        alert("Login successfully")
       },
       onError: (error) => {
         alert(error.message)

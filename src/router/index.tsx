@@ -5,8 +5,7 @@ import {
     RouterProvider,
  } from "react-router-dom";
  import App from "../App";
- import SignIn from '../modules/auth/pages/sign-in'
- import SignUp from '../modules/auth/pages/sign-up'
+import { SignIn, SignUp } from "../modules";
 
  const Index = () => {
     const router = createBrowserRouter(
