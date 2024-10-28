@@ -17,7 +17,7 @@ const SignIn = () => {
   function handleSubmit(values: SignInType): void {
     mutate(values, {
       onSuccess: () => {
-        navigate('/product')
+        navigate('/admin-layout')
       },
       onError: (error) => {
         alert(error.message)

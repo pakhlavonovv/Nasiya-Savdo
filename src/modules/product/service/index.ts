@@ -10,9 +10,6 @@ export const getCategory = async (params: ParamsType) => {
     return response?.data
 }
 
-
-
-
 // =======================  CREATE  ===========================
 export const createCategory = async (data:CategoryDataType) => {
     const response = await axiosInstance.post("category/create", data)

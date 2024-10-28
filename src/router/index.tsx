@@ -6,6 +6,7 @@ import {
  } from "react-router-dom";
  import App from "../App";
 import { SignIn, SignUp, Product } from "../modules";
+import AdminLayout from '../modules/admin-layout/pages'
 
  const Index = () => {
     const router = createBrowserRouter(
@@ -13,7 +14,9 @@ import { SignIn, SignUp, Product } from "../modules";
           <Route path="/" element={<App />}>
             <Route index element={<SignIn/>}/>
             <Route path="sign-up" element={<SignUp/>}/>
-            <Route path="product" element={<Product/>}/>
+            <Route path="admin-layout" element={<AdminLayout/>}>
+            <Route index element={<Product/>}/>
+            </Route>
           </Route> 
        )
     );

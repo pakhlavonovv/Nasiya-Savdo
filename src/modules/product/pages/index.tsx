@@ -14,6 +14,7 @@ import  Loading  from "../../../components/loading";
 import { ColumnsType } from "antd/es/table";
 import { ParamsType } from "../../../modules/types";
 import { useQueryClient } from "@tanstack/react-query";
+import GlobalTable from "../../../components/table";
 
 const Category = () => {
   const [params, setParams] = useState<ParamsType>({
@@ -123,7 +124,18 @@ const Category = () => {
       >
         Create Product
       </Button>
-
+      <GlobalTable
+        columns={columns}
+        data={data?.all_products || []}
+        pagination={{
+          current: params.page,
+          pageSize: params.limit,
+          total: data?.total || 2,
+          showSizeChanger: true,
+          pageSizeOptions: ["3", "5", "7", "10", "12"],
+        }}
+        onChange={handleTableChange}
+      />
      
     </>
   );
