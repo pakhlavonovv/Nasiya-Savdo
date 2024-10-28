@@ -26,7 +26,7 @@ const SignUp = () => {
         
         mutate(payload, {
           onSuccess: (res: any) => {
-            alert("Sign up successfully")
+            alert(res)
             navigate("/");
           },
           onError: (error: any) => {

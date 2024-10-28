@@ -1,4 +1,4 @@
-import { ProductOutlined, UnorderedListOutlined, TagsOutlined, ContainerOutlined } from '@ant-design/icons';
+import { TagsOutlined,  } from '@ant-design/icons';
 export interface AdminType {
     content: string
     path: string
