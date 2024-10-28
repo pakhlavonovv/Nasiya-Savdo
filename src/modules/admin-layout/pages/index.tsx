@@ -28,7 +28,7 @@ const Index = () => {
   }, [pathname]);
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
+    localStorage.removeItem("access_token");
     message.success("Logged out successfully");
     navigate("/");
   };

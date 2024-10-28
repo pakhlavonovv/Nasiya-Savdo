@@ -66,8 +66,24 @@ const Category = () => {
       dataIndex: "name",
     },
     {
+      title: "Model",
+      dataIndex: "model",
+    },
+    {
+      title: "Color",
+      dataIndex: "color",
+    },
+    {
+      title: "Image",
+      dataIndex: "image_url",
+    },
+    {
+      title: "Made in",
+      dataIndex: "made_in",
+    },
+    {
       title: "Created At",
-      dataIndex: "createdAt",
+      dataIndex: "date_of_creation",
       render: (createdAt) => new Date(createdAt).toLocaleDateString(),
     },
     {

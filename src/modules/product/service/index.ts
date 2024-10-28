@@ -12,7 +12,7 @@ export const getCategory = async (params: ParamsType) => {
 
 // =======================  CREATE  ===========================
 export const createCategory = async (data:CategoryDataType) => {
-    const response = await axiosInstance.post("category/create", data)
+    const response = await axiosInstance.post("/product/create", data)
     return response?.data
 }
 
@@ -31,8 +31,7 @@ export const updateCategory = async (data: CategoryDataType) => {
 // ======================  DELETE  ==========================
 
 export const deleteCategory = async (id: string | number) => {
-      const response = await axiosInstance.delete(`category/delete/${id}`);
+      const response = await axiosInstance.delete(`/product/delete/${id}`);
       return response?.data;
-   
   };
   
