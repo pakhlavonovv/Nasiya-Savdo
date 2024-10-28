@@ -1,13 +1,13 @@
 
 import { Form, Input, Button } from "antd";  
-import { NavLink, } from "react-router-dom";
+import { NavLink, useNavigate, } from "react-router-dom";
 import { SignIn as SignInType} from "../../types";
 import { useSignInMutation } from "../../hooks/mutations"
 
 
 const SignIn = () => {
   const {mutate} = useSignInMutation()
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const initialValues: SignInType = {
     username: '',
     password: ''
@@ -16,8 +16,8 @@ const SignIn = () => {
 
   function handleSubmit(values: SignInType): void {
     mutate(values, {
-      onSuccess: (res) => {
-        alert("Login successfully")
+      onSuccess: () => {
+        navigate('/product')
       },
       onError: (error) => {
         alert(error.message)
@@ -27,7 +27,7 @@ const SignIn = () => {
   
     return (
       <>
-          <div className="w-full h-[100vh] flex justify-center items-center ">
+          <div className="w-full h-[100vh] flex justify-center items-center bg-[#2d2d2d] text-white">
         <div className="w-[100%] flex flex-col justify-center items-center md:w-[50%]">
           <div className="w-full md:w-[60%]">
             <h1 className="font-bold text-4xl mb-4 text-center">Sign In</h1>
@@ -35,12 +35,12 @@ const SignIn = () => {
               onFinish={handleSubmit}
               layout="vertical"
               initialValues={initialValues}
-              className="flex flex-col items-center justify-center"
+              className="flex flex-col items-center justify-center text-white"
             >
               <Form.Item
               className="w-[350px]"
                 name="username"
-                label={<span style={{ fontSize: "14px" }}>Username</span>}
+                label={<span style={{ fontSize: "14px", color: "white" }}>Username</span>}
                 rules={[{ required: true, message: "Please input your Username!" }]}
               >
                 <Input placeholder="Username" style={{ padding: "7px 15px", fontSize: "16px" }} />
@@ -49,7 +49,7 @@ const SignIn = () => {
               <Form.Item
                 className="w-[350px]"
                 name="password"
-                label={<span style={{ fontSize: "14px" }}>Password</span>}
+                label={<span style={{ fontSize: "14px", color: "white" }}>Password</span>}
                 rules={[{ required: true, message: "Please input your password!" }]}
               >
                 <Input.Password placeholder="Password" style={{ padding: "7px 15px", fontSize: "16px" }} />

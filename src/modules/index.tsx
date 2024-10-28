@@ -10,5 +10,8 @@ const SignUp = loadable(()=> import ("./auth/pages/sign-up"),{
     fallback: <Loading/>
 })
 
+const Product = loadable(()=> import ("./product/pages"),{
+    fallback: <Loading/>
+})
 
-export { SignIn, SignUp }
+export { SignIn, SignUp, Product }

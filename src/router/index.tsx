@@ -5,7 +5,7 @@ import {
     RouterProvider,
  } from "react-router-dom";
  import App from "../App";
-import { SignIn, SignUp } from "../modules";
+import { SignIn, SignUp, Product } from "../modules";
 
  const Index = () => {
     const router = createBrowserRouter(
@@ -13,6 +13,7 @@ import { SignIn, SignUp } from "../modules";
           <Route path="/" element={<App />}>
             <Route index element={<SignIn/>}/>
             <Route path="sign-up" element={<SignUp/>}/>
+            <Route path="product" element={<Product/>}/>
           </Route> 
        )
     );
