@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useGetCategory } from "../hooks/queries";
-import ProductModal from "./modal";
 import { Button, Tooltip, Popconfirm, Space } from "antd";
 import {
   EditOutlined,
@@ -15,10 +14,11 @@ import { ColumnsType } from "antd/es/table";
 import { ParamsType } from "../../../modules/types";
 import { useQueryClient } from "@tanstack/react-query";
 import GlobalTable from "../../../components/table";
+import ProductModal from "./modal";
 
-const Category = () => {
+const Contract = () => {
   const [params, setParams] = useState<ParamsType>({
-
+    status: "",
     limit: 3,
     page: 1,
     search: "",
@@ -63,30 +63,29 @@ const Category = () => {
         index + 1 + (params.page - 1) * params.limit,
     },
     {
-      title: "Name",
-      dataIndex: "name",
+      title: "Consumer address",
+      dataIndex: "consumer_address",
     },
     {
-      title: "Model",
-      dataIndex: "model",
+      title: "Consumer Name",
+      dataIndex: "consumer_name",
     },
     {
-      title: "Color",
-      dataIndex: "color",
+      title: "Passport Serial",
+      dataIndex: "consumer_passport_serial",
     },
     {
-      title: "Image",
-      dataIndex: "image_url",
+      title: "Phone number",
+      dataIndex: "phone_number",
     },
     {
-      title: "Made in",
-      dataIndex: "made_in",
+      title: "Duration",
+      dataIndex: "duration",
     },
     {
-      title: "Created At",
-      dataIndex: "date_of_creation",
-      render: (createdAt) => new Date(createdAt).toLocaleDateString(),
-    },
+        title: "Passport Image",
+        dataIndex: "passport_image",
+      },
     {
       title: "Action",
       key: "action",
@@ -102,7 +101,7 @@ const Category = () => {
             />
           </Tooltip>
           <Popconfirm
-            title="Are you sure to delete this category?"
+            title="Are you sure to delete this consumer?"
             onConfirm={() => {
               deleteCategory(record.id);
               queryClient.invalidateQueries({ queryKey: ["category"] });
@@ -158,4 +157,4 @@ const Category = () => {
   );
 };
 
-export default Category;
+export default Contract;

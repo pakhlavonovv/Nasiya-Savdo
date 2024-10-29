@@ -58,58 +58,40 @@ const ProductModal = ({ open, handleClose, update }: ModalPropType) => {
     >
       <Form layout="vertical" onFinish={handleSubmit} form={form}>
         <Form.Item
-          label="Product Name"
-          name="name"
-          rules={[{ required: true, message: "Please enter product name" }]}
+          label="Consumer address"
+          name="consumer_address"
+          rules={[{ required: true, message: "Please enter consumer address" }]}
         >
-          <Input placeholder="Enter product name" />
+          <Input placeholder="Enter consumer address" />
         </Form.Item>
         <Form.Item
-          label="Model"
-          name="model"
-          rules={[{ required: true, message: "Please enter model" }]}
+          label="Consumer name"
+          name="consumer_name"
+          rules={[{ required: true, message: "Please enter consumer name" }]}
         >
-          <Input placeholder="Enter model name" />
+          <Input placeholder="Enter consumer name" />
         </Form.Item>
-        <Form.Item
-      label="Color"
-      name="color"
-      rules={[{ required: true, message: "Please select a color" }]}
-    >
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <Input
-          value={color}
-          onChange={(e) => setColor(e.target.value)}
-          placeholder="Enter color"
-          style={{ marginRight: 8 }}
-        />
-        <ColorPicker
-          value={color}
-          onChange={setColor}
-        />
-      </div>
-    </Form.Item>
 
     <Form.Item
-          label="Made in"
-          name="made_in"
-          rules={[{ required: true, message: "Please enter when made in" }]}
+          label="Passport serial"
+          name="consumer_passport_serial"
+          rules={[{ required: true, message: "Please enter consumer passport serial" }]}
         >
-          <Input placeholder="Enter when made in" />
+          <Input placeholder="Enter consumer passport serial" />
         </Form.Item>
         <Form.Item
-          label="Image url"
-          name="image_url"
-          rules={[{ required: true, message: "Please enter image url" }]}
+          label="Phone number"
+          name="consumer_phone_number"
+          rules={[{ required: true, message: "Please enter consumer phone number" }]}
         >
-          <Input type="file" placeholder="Enter image url" />
+          <Input placeholder="Enter consumer phone number" />
         </Form.Item>
         <Form.Item
-          label="Date of creation"
-          name="date_of_creation"
-          rules={[{ required: true, message: "Please enter date of creation" }]}
+          label="Duration"
+          name="duration"
+          rules={[{ required: true, message: "Please enter duration" }]}
         >
-          <Input placeholder="Enter date" />
+          <Input placeholder="Enter duration" />
         </Form.Item>
         <Form.Item>
           <Button className='bg-[#AD8354] text-white' htmlType="submit" block>

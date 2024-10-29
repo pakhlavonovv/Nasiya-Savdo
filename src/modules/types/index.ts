@@ -1,4 +1,5 @@
 export interface ParamsType {
+    status?: string;
     search: string;
     page: number;
     limit: number;
